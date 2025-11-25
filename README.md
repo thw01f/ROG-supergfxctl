@@ -45,3 +45,98 @@ sudo make install
 
 # 4. Enable and start the daemon
 sudo systemctl enable --now supergfxd.service
+```
+
+
+# Usage
+
+## General Help
+
+```bash
+supergfxctl --help
+```
+
+Display all available commands, flags, and supported operations.
+
+---
+
+## Check Current GPU Mode
+
+```bash
+supergfxctl --get
+```
+
+Shows the currently active GPU mode (Integrated, Hybrid, VFIO, etc.).
+
+---
+
+## List Supported Modes
+
+```bash
+supergfxctl --supported
+```
+
+Displays all GPU modes available on your hardware.
+
+---
+
+## Switch GPU Mode
+
+```bash
+sudo supergfxctl --mode Hybrid
+sudo supergfxctl --mode Integrated
+sudo supergfxctl --mode AsusMuxDgpu
+sudo supergfxctl --mode VFIO
+```
+
+Mode names depend on your machine's hardware capabilities.
+
+---
+
+## View GPU Status
+
+```bash
+supergfxctl --status
+```
+
+Shows the runtime state of GPUs, MUX switch, power status, and current daemon mode.
+
+---
+
+## Reload Daemon Configuration
+
+```bash
+sudo supergfxctl --reload
+```
+
+Reloads `/etc/supergfxd.conf` without restarting the service.
+
+---
+
+## System Service Management (supergfxd)
+
+Start the daemon:
+
+```bash
+sudo systemctl start supergfxd
+```
+
+Stop the daemon:
+
+```bash
+sudo systemctl stop supergfxd
+```
+
+Check daemon status:
+
+```bash
+sudo systemctl status supergfxd
+```
+
+View logs:
+
+```bash
+journalctl -u supergfxd -f
+```
+
+---
