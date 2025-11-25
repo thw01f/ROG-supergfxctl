@@ -91,6 +91,64 @@ sudo supergfxctl --mode VFIO
 Mode names depend on your machine's hardware capabilities.
 
 
+## GPU Modes Explained (Full)
+
+### **Integrated Mode**
+
+* Only the **iGPU** is active
+* **dGPU is powered off**
+* Best for battery life
+* May require **logout or reboot**, depending on hardware
+
+
+
+### **Hybrid Mode**
+
+* **iGPU** drives the internal display
+* **dGPU** is available for offloading via PRIME
+* Balanced performance + battery
+* Usually **no reboot required**
+
+
+
+### **AsusMuxHybrid**
+
+* Requires an ASUS laptop with **hardware MUX**
+* Forces MUX to route display through the **iGPU**
+* dGPU still available for offload
+* May require a **reboot**
+
+
+
+### **AsusMuxDgpu**
+
+* For machines with ASUS hardware MUX
+* Internal display is driven directly by the **dGPU**
+* Maximum performance mode
+* Higher power usage
+* Typically **requires a reboot**
+
+
+
+### **AsusEgpu**
+
+* Designed for systems using **external GPU (eGPU) enclosures**
+* Behavior varies depending on ASUS EC firmware
+* Often requires **reboots** to switch
+
+
+
+### **VFIO Mode**
+
+* dGPU is **unbound** from the standard driver
+* Rebound to the `vfio-pci` driver
+* Used for **GPU passthrough** to virtual machines
+* Requirements:
+
+  * Kernel modules for VFIO loaded separately
+  * dGPU cannot be driving any display
+* Usually **requires a reboot**
+
 
 ## View GPU Status
 
