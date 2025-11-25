@@ -3,7 +3,7 @@
 A command-line utility (with daemon) for controlling GPU switching / hybrid graphics on ASUS laptops.  
 Originally developed by the asus-linux project: [asus-linux/supergfxctl](https://gitlab.com/asus-linux/supergfxctl)  
 
----
+
 
 ## What it does
 
@@ -11,7 +11,7 @@ Originally developed by the asus-linux project: [asus-linux/supergfxctl](https:/
 - Enables power-saving by disabling the discrete GPU when not needed. :contentReference[oaicite:3]{index=3}  
 - Works with ASUS MUXed systems, external GPUs, and hybrid setups. :contentReference[oaicite:4]{index=4}  
 
----
+
 
 ## Key Features
 
@@ -24,7 +24,7 @@ Originally developed by the asus-linux project: [asus-linux/supergfxctl](https:/
   - Additional ASUS-specific modes such as `AsusEgpu`, `AsusMuxDgpu` :contentReference[oaicite:7]{index=7}  
 - Configurable via `/etc/supergfxd.conf` (for example: hotplug type, logout timeout, always reboot setting) :contentReference[oaicite:8]{index=8}  
 
----
+
 
 ## Installation
 
@@ -58,7 +58,7 @@ supergfxctl --help
 
 Display all available commands, flags, and supported operations.
 
----
+
 
 ## Check Current GPU Mode
 
@@ -68,7 +68,7 @@ supergfxctl --get
 
 Shows the currently active GPU mode (Integrated, Hybrid, VFIO, etc.).
 
----
+
 
 ## List Supported Modes
 
@@ -78,7 +78,6 @@ supergfxctl --supported
 
 Displays all GPU modes available on your hardware.
 
----
 
 ## Switch GPU Mode
 
@@ -91,7 +90,7 @@ sudo supergfxctl --mode VFIO
 
 Mode names depend on your machine's hardware capabilities.
 
----
+
 
 ## View GPU Status
 
@@ -101,7 +100,7 @@ supergfxctl --status
 
 Shows the runtime state of GPUs, MUX switch, power status, and current daemon mode.
 
----
+
 
 ## Reload Daemon Configuration
 
@@ -111,7 +110,6 @@ sudo supergfxctl --reload
 
 Reloads `/etc/supergfxd.conf` without restarting the service.
 
----
 
 ## System Service Management (supergfxd)
 
