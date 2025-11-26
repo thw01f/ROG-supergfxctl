@@ -1,5 +1,6 @@
 # supergfxctl
 
+
 A command-line utility (with daemon) for controlling GPU switching / hybrid graphics on ASUS laptops.  
 Originally developed by the asus-linux project: [asus-linux/supergfxctl](https://gitlab.com/asus-linux/supergfxctl)  
 
